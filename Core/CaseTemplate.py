@@ -19,7 +19,8 @@ class CreateTemplate():
         self.reqkeys = ['method', 'url','data', 'headers', 'cookies', 'files', 'auth', 'timeout', 'allow_redirectsTrue',
                         'proxies', 'hooks', 'stream', 'verify', 'cert', 'json']
         self.import_string = Template(import_code).substitute()
-        self.file_path = yamlfilepath
+        self.yaml_path = yamlfilepath
+        self.file_path = _path(yamlfilepath)
 
 
     def runCreatTemplate(self):
@@ -64,11 +65,11 @@ if __name__=="__main__":
 class Test$classname:   
     '''${Remarks}'''
     req = ApiRequest()
-    Yaml_data_path = r'${yaml_flie_name}'
+    Yaml_data_path = _path(r'${yaml_flie_name}')
     YamlConfig = yaml_load(_path("Config\\ApiConfig.yaml"))
     testCase = yaml_load(Yaml_data_path)()
         """)
-        string = code.substitute(classname=class_name,Remarks=Remarks,feature=feature,yaml_flie_name=yaml_flie_path)
+        string = code.substitute(classname=class_name,Remarks=Remarks,feature=feature,yaml_flie_name=self.yaml_path)
         return string
     # 动态生成单个测试用例函数字符串
     def code_def_Create(self, dictkey,Casedict):
@@ -132,6 +133,6 @@ class Test$classname:
 
 
 if __name__ == "__main__":
-    Ypath = _path("TapiAut/CaseFile/H5.yaml")
+    Ypath = "TapiAut/CaseFile/H5.yaml"
     Tp = CreateTemplate(Ypath)
     Tp.runCreatTemplate()

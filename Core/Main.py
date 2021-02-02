@@ -45,6 +45,7 @@ def runMain():
     html_path = _path(r"report\html")
     allure_path = _path(r"allure-2.13.7\bin")
     pytest.main(["-s", "-n", "4", case_path])
+
     #pytest.main(["-s", "-n", "4", case_path, "--alluredir", result_path])
     #command_str = fr"{allure_path}\allure generate {result_path} -o {html_path} --clean"
     #os.system(command_str)
