@@ -1,11 +1,10 @@
-import sys
-import os
-a = os.path.dirname(__file__)
 
-sys.path.append(a)
+import os
+import sys
+file_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(file_path)
 from string import Template
 from Core.common import yaml_load, _path
-import os
 import_code = """import pytest
 import allure
 import requests

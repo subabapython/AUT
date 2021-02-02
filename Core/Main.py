@@ -13,6 +13,7 @@ def del_list():
         elif os.path.isdir(file_path):
             shutil.rmtree(file_path)
 def Creat_Template(path = "TapiAut/CaseFile/H5.yaml" ):
+    """ 传入 要呗生成方法的yanl 文件 生成 def 方法"""
     yamllist = []
     path = _path(path)
     if os.path.isdir(path):
@@ -31,6 +32,9 @@ def Creat_Template(path = "TapiAut/CaseFile/H5.yaml" ):
             template.runCreatTemplate()
 
 def runMain():
+    """ 通过模拟命令行运行 TemplateCase 生成单个的方法函数
+        再运行pytest
+        allure 命令行进行运行生成报告"""
     # del_list()
     case_path = _path(r"TapiAut\testCase")
     result_path = _path(r"report\result")
@@ -41,5 +45,14 @@ def runMain():
     os.system(command_str)
 
 if __name__ == "__main__" :
-    Creat_Template()
-    runMain()
+    import sys
+    file_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    sys.path.append(file_path)
+    print(sys.path)
+    a = input()
+    if a  ==  "T":
+        Creat_Template()
+        print("chuangjianmoban")
+    b = input()
+    if b == "R":
+        runMain()
