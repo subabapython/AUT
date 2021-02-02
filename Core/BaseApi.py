@@ -9,6 +9,7 @@ error_code = {0: "",
             100001: "System error, please retry later",
             100010: "System error, please retry later"}
 def Singleton(cls):
+    """ 单例的 装饰器"""
     _instance = {}
     def _singleton(*args, **kargs):
         if cls not in _instance:
@@ -17,10 +18,12 @@ def Singleton(cls):
     return _singleton
 @Singleton
 class ApiRequest(Session):
+    """ 继承Session request的请求"""
     def __init__(self):
         super().__init__()
         time.sleep(1)
         self.Set_headers()
+        """ 根据项目实际情况 配置请求头"""
         self.timeout = 20
         self.reqkeys = ['params', 'data', 'headers', 'cookies', 'files', 'auth', 'timeout',
                         'allow_redirectsTrue', 'proxies', 'hooks', 'stream', 'verify', 'cert', 'json']
@@ -29,11 +32,13 @@ class ApiRequest(Session):
                        'hooks', 'stream', 'verify', 'cert', 'json']
 
     def Set_headers(self):
+        """ 根据项目实际情况 配置请求头"""
         self.headers = {'Accept-Encoding': ', '.join(('gzip', 'deflate')), 'Accept': '*/*', }
         defaul_headers = yaml_load(_path("Config", "ApiConfig.yaml"))("headers")
         self.headers.update(defaul_headers)
 
     def Set_req_data(self, **YamlCasekwargs):
+        """ 获取yaml文件中数据进行整合 """
         kwargs = {}
         kwargs_json = {}
         method = YamlCasekwargs.get("method")
@@ -60,6 +65,7 @@ class ApiRequest(Session):
         return name, remark, examine, method, url, kwargs, kwargs_json
 
     def AssertExamine(self, req, examine):
+        """ 验证数据"""
         if isinstance(req.text, str):
             res = json.loads(req.text)
         assert req.ok == True

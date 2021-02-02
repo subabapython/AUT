@@ -1,17 +1,16 @@
 from string import Template
-from Core.common import yaml_load,_path
-import re
+from Core.common import yaml_load, _path
 import os
-import yaml
 import_code = """import pytest
 import allure
 import requests
 from Core.BaseApi import ApiRequest
 from Core.Logging import logger
 import json
-from Core.common import yaml_load, reqkwargs
+from Core.common import yaml_load, _path
 """
 class CreateTemplate():
+    """ 创建pytest 的模板数据def方法 """
     def __init__(self,yamlfilepath):
         self.reqkeys = ['method', 'url','data', 'headers', 'cookies', 'files', 'auth', 'timeout', 'allow_redirectsTrue',
                         'proxies', 'hooks', 'stream', 'verify', 'cert', 'json']
@@ -20,7 +19,7 @@ class CreateTemplate():
 
 
     def runCreatTemplate(self):
-        """ """
+        """ 模板创建的方法run方法"""
         yamlfilepath = self.file_path
         codefilename = os.path.basename(yamlfilepath).split(".")
         codefilepath = _path(f"TapiAut/testCase/test_{codefilename[0]}.py")
@@ -62,7 +61,7 @@ class Test$classname:
     '''${Remarks}'''
     req = ApiRequest()
     Yaml_data_path = r'${yaml_flie_name}'
-    YamlConfig = yaml_load(r"C:\\Users\\67091\Desktop\MCAutTest\Config\\ApiConfig.yaml")
+    YamlConfig = yaml_load(_path("Config\\ApiConfig.yaml"))
     testCase = yaml_load(Yaml_data_path)()
         """)
         string = code.substitute(classname=class_name,Remarks=Remarks,feature=feature,yaml_flie_name=yaml_flie_path)
@@ -128,4 +127,7 @@ class Test$classname:
         return string
 
 
-
+if __name__ == "__main__":
+    Ypath = _path("TapiAut/CaseFile/H5.yaml")
+    Tp = CreateTemplate(Ypath)
+    Tp.runCreatTemplate()

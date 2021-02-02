@@ -1,6 +1,6 @@
 import logging.config
 import os
-from Core.common import yaml_load,_path
+from Core.common import yaml_load, _path
 
 def initlogging():
     log_conf_path = _path('Config/Config.yaml')
@@ -9,7 +9,11 @@ def initlogging():
         pass
     else:
         os.mkdir(log_flie_path)
-    logging.config.dictConfig(yaml_load(log_conf_path)("loggings"))
+    dictconfig = yaml_load(log_conf_path)("loggings")
+    dictconfig["handlers"]["info_file_handler"]["filename"] = _path("LogFiles/info.log")
+    dictconfig["handlers"]["error_file_handler"]["filename"] = _path("LogFiles/errors.log")
+    logging.config.dictConfig(dictconfig)
+
 initlogging()
 def get_logger(name):
     logger = logging.getLogger(name)
