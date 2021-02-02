@@ -66,7 +66,7 @@ class Test$classname:
     '''${Remarks}'''
     req = ApiRequest()
     Yaml_data_path = _path(r'${yaml_flie_name}')
-    YamlConfig = yaml_load(_path("Config\\ApiConfig.yaml"))
+    YamlConfig = yaml_load(_path(r"Config/ApiConfig.yaml"))
     testCase = yaml_load(Yaml_data_path)()
         """)
         string = code.substitute(classname=class_name,Remarks=Remarks,feature=feature,yaml_flie_name=self.yaml_path)
