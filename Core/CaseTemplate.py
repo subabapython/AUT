@@ -1,3 +1,8 @@
+import sys
+import os
+a = os.path.dirname(__file__)
+
+sys.path.append(a)
 from string import Template
 from Core.common import yaml_load, _path
 import os
