@@ -1,4 +1,8 @@
 import os
+import sys
+file_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(file_path)
+print(sys.path)
 from Core.common import _path
 import shutil
 import pytest
@@ -45,10 +49,6 @@ def runMain():
     os.system(command_str)
 
 if __name__ == "__main__" :
-    import sys
-    file_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    sys.path.append(file_path)
-    print(sys.path)
     a = input()
     if a  ==  "T":
         Creat_Template()
