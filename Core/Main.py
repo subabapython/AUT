@@ -48,7 +48,7 @@ def runMain():
 
     pytest.main(["-s", "-n", "auto", case_path, "--alluredir", result_path])
     command_str = fr"{allure_path}/allure generate {result_path} -o {html_path} --clean"
-    command_server = fr"{allure_path}/allure serve {html_path}"
+    command_server = fr"{allure_path}/allure serve {result_path}"
     os.system(command_str)
     os.system(command_server
               )
