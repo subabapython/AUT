@@ -39,25 +39,17 @@ def runMain():
     """ 通过模拟命令行运行 TemplateCase 生成单个的方法函数
         再运行pytest
         allure 命令行进行运行生成报告"""
-    # del_list()
+    del_list()
     case_path = _path(r"TapiAut/testCase")
     result_path = _path(r"report/result")
     html_path = _path(r"report/html")
     allure_path = _path(r"allure-2.13.7/bin")
-    #pytest.main(["-s", "-n", "4", case_path])
-
     pytest.main(["-s", "-n", "auto", case_path, "--alluredir", result_path])
     command_str = fr"{allure_path}/allure generate {result_path} -o {html_path} --clean"
     command_server = fr"{allure_path}/allure serve {result_path}"
     os.system(command_str)
-    os.system(command_server
-              )
+    #os.system(command_server)
 
-if __name__ == "__main__" :
-    a = input()
-    if a  ==  "T":
-        Creat_Template()
-        print("chuangjianmoban")
-    b = input()
-    if b == "R":
-        runMain()
+if __name__ == "__main__":
+    runMain()
+
