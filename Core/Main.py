@@ -41,7 +41,7 @@ def runMain():
         allure 命令行进行运行生成报告"""
     del_list()
     case_path = _path(r"TapiAut/testCase")
-    result_path = _path(r"report/result")
+    result_path = _path(r"result")
     html_path = _path(r"report/html")
     allure_path = _path(r"allure-2.13.7/bin")
     pytest.main(["-s", "-n", "auto", case_path, "--alluredir", result_path])
