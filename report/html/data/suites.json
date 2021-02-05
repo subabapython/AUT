@@ -1,0 +1,30 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "TapiAut.testCase",
+    "children" : [ {
+      "name" : "test_H5",
+      "children" : [ {
+        "name" : "TestH5",
+        "children" : [ {
+          "name" : "test_api_user_regist",
+          "uid" : "60cda7e29877d038",
+          "parentUid" : "d094ffcda871e7033d269a0489823d75",
+          "status" : "passed",
+          "time" : {
+            "start" : 1612509918840,
+            "stop" : 1612509918840,
+            "duration" : 0
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "d094ffcda871e7033d269a0489823d75"
+      } ],
+      "uid" : "304c555507f57fcf598930159356a99f"
+    } ],
+    "uid" : "4a599a627ed5fa6c41fe725e70854e50"
+  } ]
+}

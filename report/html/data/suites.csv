@@ -1,0 +1,2 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Fri Feb 05 15:25:18 CST 2021","Fri Feb 05 15:25:18 CST 2021","0","TapiAut.testCase","test_H5","TestH5","","","test_api_user_regist",""

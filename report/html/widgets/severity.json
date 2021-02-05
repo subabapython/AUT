@@ -1,0 +1,11 @@
+[ {
+  "uid" : "60cda7e29877d038",
+  "name" : "test_api_user_regist",
+  "time" : {
+    "start" : 1612509918840,
+    "stop" : 1612509918840,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

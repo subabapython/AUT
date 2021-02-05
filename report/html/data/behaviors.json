@@ -1,0 +1,26 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "测试用例集备注说明",
+    "children" : [ {
+      "name" : "用户注册",
+      "children" : [ {
+        "name" : "test_api_user_regist",
+        "uid" : "60cda7e29877d038",
+        "parentUid" : "8d1bf19edbe995e5140fc1d59ab97bf9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1612509918840,
+          "stop" : 1612509918840,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "8d1bf19edbe995e5140fc1d59ab97bf9"
+    } ],
+    "uid" : "c80e56004922d63e10dfd16edbef9a4d"
+  } ]
+}

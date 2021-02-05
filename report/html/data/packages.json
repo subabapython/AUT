@@ -1,0 +1,22 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "TapiAut.testCase.test_H5",
+    "children" : [ {
+      "name" : "test_api_user_regist",
+      "uid" : "60cda7e29877d038",
+      "parentUid" : "98ef0e11042a51c63b14ea763fa5779b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1612509918840,
+        "stop" : 1612509918840,
+        "duration" : 0
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "TapiAut.testCase.test_H5"
+  } ]
+}
